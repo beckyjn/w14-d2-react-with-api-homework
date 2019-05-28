@@ -4,8 +4,8 @@ const ChartList = ({chartItems, chartType}) => {
 
 
     
-    const chartItem = chartItems.map((chartItem) => {
-        return <li>
+    const chartItem = chartItems.map((chartItem, index) => {
+        return <li key={index}>
         <img src={chartItem["im:image"][2].label} alt="cover art" />
         <h4>{chartItem["im:name"].label} -- {chartItem["im:artist"].label}</h4>
         <p>{chartItem.category.attributes.label}</p>
@@ -17,7 +17,7 @@ const ChartList = ({chartItems, chartType}) => {
     return(
         <div>
             <h2>{chartType} chart</h2>
-            <ul>{chartItem}</ul>
+            <ol>{chartItem}</ol>
         </div>
     )
 }
